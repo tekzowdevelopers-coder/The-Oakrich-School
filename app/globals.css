@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #FFFFFF;
+  --text-primary: #111111;
+  --text-secondary: #5F5F5F;
+  --bg-soft: #F7F7F5;
+  --border-color: #E7E7E7;
+  --accent-color: #701A75;
+  --accent-hover: #58145C;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: #701A75;
+    color: #FFFFFF;
+  }
+
+  /* Focus ring for accessibility */
+  :focus-visible {
+    outline: 2px solid #701A75;
+    outline-offset: 2px;
+  }
+}
+
+/* Fluid clamp typography */
+.text-editorial-hero {
+  font-size: clamp(2.5rem, 5.5vw + 1rem, 5.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.text-editorial-h2 {
+  font-size: clamp(2rem, 3.5vw + 0.5rem, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.text-editorial-h3 {
+  font-size: clamp(1.35rem, 2vw + 0.25rem, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+/* Editorial rule / line styling */
+.editorial-rule {
+  height: 1px;
+  background-color: #E7E7E7;
+  width: 100%;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
