@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oakrichinternationalschool.com/sitemap.xml
+Sitemap: https://www.toisinternational.com/sitemap.xml
